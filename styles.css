@@ -1,3 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,644;1,644&display=swap");
+
 body {
-  background-color: lightpink;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(255, 149, 0);
+  align-items: center;
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 21px;
+}
+
+.nav-items > ul > li {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  color: white;
+  font-family: "Open Sans", serif;
+}
+
+.logo-icon {
+  width: 75px;
+  margin: 10px;
+}
+
+.cart-icon {
+  width: 35px;
 }
