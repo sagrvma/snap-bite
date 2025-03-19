@@ -1,9 +1,23 @@
 import Restaurants from "../utils/Restaurants";
 import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 
 const Body = () => {
-  const [restaurantList, setRestaurantList] = useState(Restaurants);
+  const [restaurantList, setRestaurantList] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  });
+
+  const fetchData = async () => {
+    const response = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const data = await response.json();
+    setRestaurantList(
+      data.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
+    );
+  };
 
   return (
     <div className="body">
