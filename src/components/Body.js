@@ -1,5 +1,6 @@
 import Restaurants from "../utils/Restaurants";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 import { use, useEffect, useState } from "react";
 
 const Body = () => {
@@ -7,7 +8,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const fetchData = async () => {
     const response = await fetch(
@@ -19,7 +20,9 @@ const Body = () => {
     );
   };
 
-  return (
+  return restaurantList.length == 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="search">
         <button

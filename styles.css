@@ -164,3 +164,19 @@ body {
     width: 90%; /* Makes button take full width */
   }
 }
+
+.shimmer-container {
+  display: flex; /* Arranges cards in a row */
+  flex-wrap: wrap; /* Allows cards to wrap to next line if needed */
+  gap: 20px; /* Space between each card */
+  justify-content: center; /* Centers the cards horizontally */
+  padding: 20px; /* Adds space around the container */
+  margin-top: 75px;
+}
+.shimmer-cards {
+  width: 250px;
+  height: 300px;
+  background-color: rgb(241, 241, 241);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
