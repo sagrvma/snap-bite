@@ -5,6 +5,8 @@ import { use, useEffect, useState } from "react";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -18,6 +20,10 @@ const Body = () => {
     setRestaurantList(
       data.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
     );
+    setFilteredList(
+      data.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
+    );
+    console.log(restaurantList);
   };
 
   return restaurantList.length == 0 ? (
@@ -25,6 +31,29 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="search">
+        <div>
+          <input
+            type="text"
+            value={searchValue}
+            onChange={(e) => {
+              setSearchValue(e.target.value);
+            }}
+          ></input>
+          <button
+            onClick={() => {
+              setFilteredList(
+                restaurantList.filter((res) =>
+                  res.info.name
+                    .toLowerCase()
+                    .includes(searchValue.toLowerCase())
+                )
+              );
+              console.log(filteredList);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -33,11 +62,11 @@ const Body = () => {
             );
           }}
         >
-          Filter
+          Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {restaurantList.map((restaurant) => (
+        {filteredList.map((restaurant) => (
           <RestaurantCard
             key={restaurant.info.id}
             resData={restaurant}

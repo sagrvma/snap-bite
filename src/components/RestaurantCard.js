@@ -1,6 +1,6 @@
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
-    resData?.info; //optional chaining
+    resData?.info; //optional chaining, destructuring
   return (
     <div className="res-card">
       <img
