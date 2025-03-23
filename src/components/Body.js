@@ -8,6 +8,9 @@ const Body = () => {
   const [filteredList, setFilteredList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
+  const corsAPIKey = "5294f507";
+  const corsEmail = "therealsagarverma@gmail.com";
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -23,7 +26,6 @@ const Body = () => {
     setFilteredList(
       data.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
     );
-    console.log(restaurantList);
   };
 
   return restaurantList.length == 0 ? (
