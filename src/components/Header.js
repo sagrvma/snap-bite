@@ -1,6 +1,7 @@
 import logo from "../utils/logo.png";
 import cart from "../utils/cart.png";
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -12,9 +13,15 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact Us</Link>
+          </li>
           <li>
             <img className="cart-icon" alt="cart" src={cart}></img>
           </li>
