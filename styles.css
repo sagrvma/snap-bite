@@ -185,8 +185,7 @@ body {
 .nav-items > ul > li > button {
   background-color: #ff9500; /* Button background color */
   color: white; /* Button text color */
-  border: solid 1px white
-  ; /* Remove default border */
+  border: solid 1px white; /* Remove default border */
   padding: 10px 20px; /* Add padding */
   border-radius: 5px; /* Rounded corners */
   font-size: 16px; /* Font size */
@@ -196,4 +195,27 @@ body {
 
 .nav-items > ul > li > button:hover {
   background-color: #e68a00; /* Darker background color on hover */
+}
+
+.user-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  margin: 16px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.user-card h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.user-card h3 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 4px;
 }
