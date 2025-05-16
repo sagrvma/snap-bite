@@ -1,15 +1,13 @@
-import Restaurants from "../utils/Restaurants";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { use, useEffect, useState } from "react";
+import { RestaurantListAPI } from "../utils/constants";
+import { useEffect, useState } from "react";
+import { Link } from "react-router";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
-
-  const corsAPIKey = "5294f507";
-  const corsEmail = "therealsagarverma@gmail.com";
 
   useEffect(() => {
     fetchData();
@@ -20,6 +18,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const data = await response.json();
+    console.log(data);
     setRestaurantList(
       data.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
     );
@@ -69,10 +68,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredList.map((restaurant) => (
-          <RestaurantCard
+          <Link
+            to={"/restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
-            resData={restaurant}
-          ></RestaurantCard>
+          >
+            <RestaurantCard resData={restaurant}></RestaurantCard>
+          </Link>
         ))}
       </div>
     </div>

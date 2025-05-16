@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
     resData?.info; //optional chaining, destructuring
