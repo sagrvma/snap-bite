@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { GithubUserAPI } from "../utils/constants";
 
 const User = () => {
   const [name, setName] = useState("Dummy Name");
@@ -10,7 +11,7 @@ const User = () => {
   }, []);
 
   const fetchData = async () => {
-    const response = await fetch("https://api.github.com/users/sagrvma");
+    const response = await fetch(GithubUserAPI + "sagrvma");
     const data = await response.json();
 
     // console.log(data);

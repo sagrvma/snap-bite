@@ -1,3 +1,5 @@
+import { RestaurantCardImageAPI } from "../utils/constants.js";
+
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
     resData?.info; //optional chaining, destructuring
@@ -5,10 +7,7 @@ const RestaurantCard = ({ resData }) => {
     <div className="res-card">
       <img
         className="res-img"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.info.cloudinaryImageId
-        }
+        src={RestaurantCardImageAPI + cloudinaryImageId}
       ></img>
       <h2>{name}</h2>
       <h4>{cuisines.join(", ")}</h4>
