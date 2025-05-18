@@ -1,40 +1,48 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
-import { RestaurantMenuAPI } from "../utils/constants";
+import { useRestaurantMenu } from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const menuData = await fetch(RestaurantMenuAPI + id);
-    const json = await menuData.json();
-    console.log(json);
-
-    setResInfo(json.data);
-    console.log(
-      json.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-        ?.card?.itemCards[0]?.card?.info?.name
-    );
-  };
+  const resInfo = useRestaurantMenu(id);
 
   if (resInfo === null) return <Shimmer />;
 
+  // const { name, cuisines, costForTwoMessage } =
+  //   resInfo?.cards[2]?.card?.card?.info;
+
+  // const { itemCards } =
+  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  //This was not working for some restaurants as api has different structure for different restaurants
+  //We should search dynamically
+
+  const resInfoCard = resInfo?.cards.find((card) => card?.card?.card?.info); //*******
+  // console.log(resInfoCard);
   const { name, cuisines, costForTwoMessage } =
-    resInfo?.cards[2]?.card?.card?.info;
+    resInfoCard?.card?.card?.info || {};
 
-  const { itemCards } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  // resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+  //To get itemCards, use double find
 
-  console.log(10);
-  console.log(itemCards);
+  const menuItemCards = resInfo?.cards
+    .find((card) => card?.groupedCard?.cardGroupMap?.REGULAR)
+    ?.groupedCard?.cardGroupMap?.REGULAR.cards.find(
+      (c) => c?.card?.card?.itemCards
+    );
+
+  const itemCards = menuItemCards?.card?.card?.itemCards || [];
+  // console.log(menuItemCards);
+
+  // const itemCards = menuItemCards?.card?.card?.itemCards || {};
+
+  // console.log(itemCards);
+
+  if (!Array.isArray(itemCards) || itemCards.length == 0) {
+    return <h2>Menu not available currently.</h2>;
+  } //Handling error cases
 
   return (
     <div className="restaurant-menu">
@@ -44,7 +52,8 @@ const RestaurantMenu = () => {
       <ul>
         {itemCards.map((item) => (
           <li key={item?.card?.info?.id}>
-            {item?.card?.info?.name} - Rs{item?.card?.info?.price}
+            {item?.card?.info?.name} - Rs
+            {(item?.card?.info?.price ?? item?.card?.info?.defaultPrice) / 100}
           </li>
         ))}
       </ul>
