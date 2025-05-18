@@ -1,29 +1,17 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { RestaurantListAPI } from "../utils/constants";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { useRestaurantList } from "../utils/useRestaurantList";
 import { Link } from "react-router";
 
 const Body = () => {
-  const [restaurantList, setRestaurantList] = useState([]);
+  const restaurantList = useRestaurantList();
   const [filteredList, setFilteredList] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    const response = await fetch(RestaurantListAPI);
-    const data = await response.json();
-    console.log(data);
-    setRestaurantList(
-      data.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
-    );
-    setFilteredList(
-      data.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle.restaurants
-    );
-  };
+    setFilteredList(restaurantList);
+  }, [restaurantList]);
 
   return restaurantList.length == 0 ? (
     <Shimmer />
@@ -56,7 +44,7 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            setRestaurantList(
+            setFilteredList(
               restaurantList.filter((res) => res.info.avgRating > 4.3)
             );
           }}
