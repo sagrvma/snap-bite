@@ -1,4 +1,4 @@
-import { RestaurantCardImageAPI } from "../utils/constants.js";
+import { RestaurantCardImageAPI } from "../utils/constants.jsx";
 
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =

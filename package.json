@@ -15,8 +15,9 @@
   "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -25,7 +26,7 @@
     "react-router-dom": "^7.4.0"
   },
   "devDependencies": {
-    "parcel": "^2.15.1",
-    "process": "^0.11.10"
+    "@vitejs/plugin-react": "^4.4.1",
+    "vite": "^6.3.5"
   }
 }

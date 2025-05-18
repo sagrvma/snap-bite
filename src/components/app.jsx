@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Header.js";
-import Body from "./Body.js";
+import Header from "./Header.jsx";
+import Body from "./Body.jsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
-import About from "./About.js";
+import About from "./About.jsx";
 import ContactUs from "./ContactUs.jsx";
 import Error from "./Error.jsx";
-import RestaurantMenu from "./RestaurantMenu.js";
+import RestaurantMenu from "./RestaurantMenu.jsx";
 
 const AppLayout = () => {
   return (
