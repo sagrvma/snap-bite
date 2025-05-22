@@ -1,1 +1,76 @@
-@import "tailwindcss";
+/* Import Open Sans font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #f9f9f9; /* Optional: light background */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fc8019; /* Swiggy orange */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: "Open Sans", sans-serif;
+  color: white;
+}
+
+.logo .logo-icon {
+  height: 70px;
+  cursor: pointer;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+nav ul li a:hover {
+  opacity: 0.85;
+}
+
+nav ul li img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+nav ul li button {
+  background-color: white;
+  border: none;
+  color: #fc8019;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 20px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-family: "Open Sans", sans-serif;
+}
+
+nav ul li button:hover {
+  background-color: #f5f5f5;
+  color: #e26b07;
+}

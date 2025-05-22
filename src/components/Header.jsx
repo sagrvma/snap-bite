@@ -9,11 +9,13 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo">
-        <img className="logo-icon" alt="Logo" src="/logo.png"></img>
+        <img className="logo-icon" alt="Logo" src="/logo.png" />
       </div>
-      <div className="nav-items">
+      <nav>
         <ul>
-          <li>Online Status:{onlineStatus ? "✅" : "🟥"}</li>
+          <li>
+            Online Status: <span>{onlineStatus ? "✅" : "🟥"}</span>
+          </li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -24,19 +26,21 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <img className="cart-icon" alt="cart" src="cart.png"></img>
+            <img alt="cart" src="/cart.png" />
           </li>
           <li>
             <button
               onClick={() => {
-                btnName == "Login" ? setBtnName("Logout") : setBtnName("Login");
+                btnName === "Login"
+                  ? setBtnName("Logout")
+                  : setBtnName("Login");
               }}
             >
               {btnName}
             </button>
           </li>
         </ul>
-      </div>
+      </nav>
     </div>
   );
 };
