@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withFastDeliveryBanner } from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 import { useRestaurantList } from "../utils/useRestaurantList";
@@ -12,9 +12,13 @@ const Body = () => {
 
   const onlineStatus = useOnlineStatus();
 
+  const FastDeliveryRestaurantCard = withFastDeliveryBanner(RestaurantCard);
+
   useEffect(() => {
     setFilteredList(restaurantList);
   }, [restaurantList]);
+
+  console.log(filteredList);
 
   return !onlineStatus ? (
     <h2>You are offline. Please check your internet connection</h2>
@@ -63,7 +67,8 @@ const Body = () => {
             to={"/restaurant/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant}></RestaurantCard>
+            {/* <RestaurantCard resData={restaurant}></RestaurantCard> */}
+            <FastDeliveryRestaurantCard resData={restaurant} />
           </Link>
         ))}
       </div>

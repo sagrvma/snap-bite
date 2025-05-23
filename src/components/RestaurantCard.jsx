@@ -18,4 +18,18 @@ const RestaurantCard = ({ resData }) => {
   );
 };
 
+//Higher Order Function*****
+export const withFastDeliveryBanner = (WrappedRestaurantCard) => {
+  return (props) => {
+    const deliveryTime = props?.resData?.info?.sla?.deliveryTime;
+    const isFast = deliveryTime <= 25;
+    return (
+      <div className="fast-delivery-wrapper">
+        {isFast && <div className="fast-delivery-banner">Fast Delivery</div>}
+        <WrappedRestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default RestaurantCard;
