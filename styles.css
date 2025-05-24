@@ -1,10 +1,11 @@
 /* Import Open Sans font */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
+
   background-color: #f9f9f9; /* Optional: light background */
 }
 
@@ -16,7 +17,8 @@ body {
   padding: 15px 20px;
   background-color: #fc8019; /* Swiggy orange */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
+
   color: white;
 }
 
@@ -68,7 +70,7 @@ nav ul li button {
   font-weight: 500;
   font-size: 20px;
   transition: background-color 0.2s ease, color 0.2s ease;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
 }
 
 nav ul li button:hover {
@@ -240,7 +242,8 @@ nav ul li button:hover {
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
+
   color: #333;
   text-align: center;
 }
@@ -259,7 +262,8 @@ nav ul li button:hover {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   max-width: 400px;
   margin: 0 auto;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
+
   color: #444;
   text-align: center;
   border: 1px solid #ddd; /* Thin light gray border */
@@ -283,7 +287,7 @@ nav ul li button:hover {
   margin: 40px auto;
   padding: 20px;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
 }
 
 .contact-body h1 {
@@ -291,4 +295,222 @@ nav ul li button:hover {
   font-weight: 700;
   color: #333;
   margin-bottom: 20px;
+}
+
+.restaurant-menu {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.07);
+  font-family: "Segoe UI", Arial, sans-serif;
+  min-height: 60vh;
+}
+
+.restaurant-menu h1 {
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-family: "Gilroy-Bold", sans-serif;
+}
+
+.restaurant-menu h2 {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0.2rem 0 0.7rem 0;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  font-family: "Gilroy-Bold", sans-serif;
+}
+
+.restaurant-menu ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+/* Optional: add a subtle divider between menu categories */
+.restaurant-menu ul > *:not(:last-child) {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .restaurant-menu {
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .restaurant-menu h1 {
+    font-size: 1.5rem;
+  }
+  .restaurant-menu h2 {
+    font-size: 1rem;
+  }
+}
+
+.menu-category-accordion {
+  background: #faf9f6;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(252, 128, 25, 0.07);
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.5rem 0.7rem 1.5rem;
+  transition: box-shadow 0.2s;
+}
+
+.menu-category-accordion:hover {
+  box-shadow: 0 4px 18px rgba(252, 128, 25, 0.13);
+}
+
+.menu-category-accordion > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.9rem;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #f1f1f1;
+  letter-spacing: 0.2px;
+}
+
+.menu-category-accordion > div:first-child span:last-child {
+  font-size: 1.2rem;
+  color: #fc8019;
+  margin-left: 0.7rem;
+}
+
+@media (max-width: 600px) {
+  .menu-category-accordion {
+    padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+  }
+  .menu-category-accordion > div:first-child {
+    font-size: 1rem;
+    padding-bottom: 0.3rem;
+  }
+}
+
+/* Each item card */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0.7rem 0 0 0;
+  font-family: "Gilroy-Bold", sans-serif;
+}
+
+.item {
+  display: flex;
+  align-items: center; /* change from flex-start to center for vertical centering */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(252, 128, 25, 0.07);
+  padding: 1.2rem 1rem;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+
+.item-header {
+  font-family: "Gilroy-Bold", sans-serif;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.item-image-container {
+  position: relative; /* 🔹 Needed for absolute button positioning */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}
+
+/* Adjust margin on the image for space to the right */
+.item-image {
+  width: 170px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  background: #f5f5f5;
+}
+
+.item:hover {
+  box-shadow: 0 4px 18px rgba(252, 128, 25, 0.13);
+}
+
+.item-name-price {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  align-items: flex-start;
+  gap: 0.3rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.item-name {
+  color: #222;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.item-price {
+  color: #fc8019;
+  font-weight: 700;
+  font-size: 1.01rem;
+  margin-left: 0; /* Remove left margin */
+}
+
+.item-description {
+  color: #666;
+  font-size: 0.97rem;
+  margin-top: 0.25rem;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.item-add-button {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid #fc8019;
+  color: #fc8019;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.item-add-button:hover {
+  background-color: #fc8019;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .item {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem 0.5rem;
+  }
+  .item-image {
+    width: 100%;
+    height: 180px;
+    margin: 1rem 0 0 0;
+  }
+  .item-description {
+    max-width: 100%;
+  }
 }

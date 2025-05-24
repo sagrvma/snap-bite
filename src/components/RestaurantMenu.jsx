@@ -2,6 +2,7 @@ import { useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router";
 import { useRestaurantMenu } from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
@@ -27,22 +28,24 @@ const RestaurantMenu = () => {
   // resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   //To get itemCards, use double find
 
-  const menuItemCards = resInfo?.cards
+  const menuItemCategories = resInfo?.cards
     .find((card) => card?.groupedCard?.cardGroupMap?.REGULAR)
-    ?.groupedCard?.cardGroupMap?.REGULAR.cards.find(
-      (c) => c?.card?.card?.itemCards
+    ?.groupedCard?.cardGroupMap?.REGULAR.cards.filter(
+      (c) =>
+        c?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
 
-  const itemCards = menuItemCards?.card?.card?.itemCards || [];
+  // const itemCards = menuItemCards?.card?.card?.itemCards || [];
   // console.log(menuItemCards);
 
   // const itemCards = menuItemCards?.card?.card?.itemCards || {};
 
-  // console.log(itemCards);
+  console.log(resInfo);
 
-  if (!Array.isArray(itemCards) || itemCards.length == 0) {
-    return <h2>Menu not available currently.</h2>;
-  } //Handling error cases
+  // if (!Array.isArray(itemCards) || itemCards.length == 0) {
+  //   return <h2>Menu not available currently.</h2>;
+  // } //Handling error cases
 
   return (
     <div className="restaurant-menu">
@@ -50,11 +53,17 @@ const RestaurantMenu = () => {
       <h2>{cuisines.join(", ")}</h2>
       <h2>{costForTwoMessage}</h2>
       <ul>
-        {itemCards.map((item) => (
+        {/* {itemCards.map((item) => (
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} - Rs
             {(item?.card?.info?.price ?? item?.card?.info?.defaultPrice) / 100}
           </li>
+        ))} */}
+        {menuItemCategories.map((category) => (
+          <RestaurantCategory
+            key={category?.card?.card?.categoryId}
+            data={category?.card?.card}
+          />
         ))}
       </ul>
     </div>

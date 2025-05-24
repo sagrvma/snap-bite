@@ -1,4 +1,4 @@
-import { RestaurantCardImageAPI } from "../utils/constants.jsx";
+import { RestaurantImageAPI } from "../utils/constants.jsx";
 
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
@@ -7,7 +7,7 @@ const RestaurantCard = ({ resData }) => {
     <div className="res-card">
       <img
         className="res-img"
-        src={RestaurantCardImageAPI + cloudinaryImageId}
+        src={RestaurantImageAPI + cloudinaryImageId}
       ></img>
       <h2>{name}</h2>
       <h4>{cuisines.join(", ")}</h4>
@@ -22,7 +22,7 @@ const RestaurantCard = ({ resData }) => {
 export const withFastDeliveryBanner = (WrappedRestaurantCard) => {
   return (props) => {
     const deliveryTime = props?.resData?.info?.sla?.deliveryTime;
-    const isFast = deliveryTime <= 25;
+    const isFast = deliveryTime <= 60;
     return (
       <div className="fast-delivery-wrapper">
         {isFast && <div className="fast-delivery-banner">Fast Delivery</div>}
