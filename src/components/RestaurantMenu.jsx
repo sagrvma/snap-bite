@@ -6,7 +6,7 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const [showIndex, setShowIndex] = useState(0);
+  const [showIndex, setShowIndex] = useState(null);
   // console.log(id);
 
   const resInfo = useRestaurantMenu(id);
@@ -64,8 +64,10 @@ const RestaurantMenu = () => {
           <RestaurantCategory
             key={category?.card?.card?.categoryId}
             data={category?.card?.card}
-            showItems={index === showIndex ? true : false}
-            setShowIndex={() => setShowIndex(index)}
+            showItems={index === showIndex}
+            setShowIndex={() =>
+              setShowIndex((currIndex) => (currIndex === index ? null : index))
+            }
           />
         ))}
       </ul>

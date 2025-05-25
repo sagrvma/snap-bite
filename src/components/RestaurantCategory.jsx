@@ -5,19 +5,14 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   //   console.log(data);
   // const [showItems, setShowItems] = useState(false);
 
-  const handleClick = () => {
-    console.log("Clicked");
-    setShowIndex(); //LIFTING THE STATE UP*****
-  };
+  // const handleClick = () => {
+  //   console.log("Clicked");
+  //   setShowIndex(); //LIFTING THE STATE UP*****
+  // };
 
   return (
     <div className="menu-category-accordion">
-      <div
-        className="item-header"
-        onClick={() => {
-          handleClick();
-        }}
-      >
+      <div className="item-header" onClick={setShowIndex}>
         <span>
           {data?.title} ({data?.itemCards.length})
         </span>
