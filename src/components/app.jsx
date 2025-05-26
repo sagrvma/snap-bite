@@ -8,14 +8,18 @@ import ContactUs from "./ContactUs.jsx";
 import Error from "./Error.jsx";
 import RestaurantMenu from "./RestaurantMenu.jsx";
 import UserContext from "../utils/UserContext.jsx";
+import appStore from "../utils/appStore.jsx";
+import { Provider } from "react-redux";
 
 const AppLayout = () => {
   return (
     <div className="app-layout">
-      <UserContext.Provider value={{ loggedInUser: "Sagar" }}>
-        <Header />
-        <Outlet />
-      </UserContext.Provider>
+      <Provider store={appStore}>
+        <UserContext.Provider value={{ loggedInUser: "Sagar" }}>
+          <Header />
+          <Outlet />
+        </UserContext.Provider>
+      </Provider>
     </div>
   );
 };
