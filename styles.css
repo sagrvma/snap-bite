@@ -87,6 +87,7 @@ nav ul li button:hover {
   justify-content: center;
   gap: 16px;
   margin-bottom: 0px;
+  padding: 12px 0;
 }
 
 /* Input + Search button wrapper */
@@ -151,7 +152,8 @@ nav ul li button:hover {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
   align-items: stretch; /* Make grid items equal height */
-  padding: 20px;
+  padding: 0 40px;
+  padding-bottom: 20px;
 }
 
 .res-card {
