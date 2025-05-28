@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: ["Pizza", "Burger"],
+    items: [],
   },
   reducers: {
     addItem: (state, action) => {
@@ -18,6 +18,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, clearCart } = cartSlice.actions;
+export const { addItem, removeItem, clearCart } = cartSlice.actions; //this export helps us dispatch those actions in our commponents
 
-export default cartSlice.reducer;
+export default cartSlice.reducer; //helps redux know how to update the state when actions are dispatched

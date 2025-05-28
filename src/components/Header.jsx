@@ -12,6 +12,7 @@ const Header = () => {
 
   //Subscribing to the stores using useSelector
   const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
 
   return (
     <div className="header">
@@ -33,8 +34,10 @@ const Header = () => {
             <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <img alt="cart" src="/cart.png" />
-            {cartItems.length} Items
+            <Link to="/cart">
+              <img alt="cart" src="/cart.png" />
+              {cartItems.length} Items
+            </Link>
           </li>
           <li>
             <button

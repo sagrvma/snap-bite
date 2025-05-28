@@ -514,3 +514,62 @@ nav ul li button:hover {
     max-width: 100%;
   }
 }
+
+/* Cart Container */
+.cart {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* Cart Heading */
+.cart h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: #fc8019;
+  letter-spacing: 1px;
+}
+
+/* Clear Cart Button */
+.cart-clear-btn {
+  background: #fc8019;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background 0.2s;
+}
+.cart-clear-btn:hover {
+  background: #e06d00;
+}
+
+/* Empty Cart Message */
+.cart-empty-msg {
+  color: #999;
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cart {
+    padding: 1rem;
+    max-width: 98vw;
+  }
+  .cart h1 {
+    font-size: 1.4rem;
+  }
+  .cart-clear-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
