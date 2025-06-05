@@ -21,3 +21,8 @@ const cartSlice = createSlice({
 export const { addItem, removeItem, clearCart } = cartSlice.actions; //this export helps us dispatch those actions in our commponents
 
 export default cartSlice.reducer; //helps redux know how to update the state when actions are dispatched
+
+//exporting selectors
+export const selectCartItems = (state) => {
+  return state.cart.items || [];
+};
