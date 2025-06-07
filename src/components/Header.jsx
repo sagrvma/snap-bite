@@ -13,7 +13,7 @@ const Header = () => {
   //Subscribing to the stores using useSelector
   const cartItems = useSelector((store) => store.cart.items); //we can create selectors in the component
   //where they are used as well instead of exporting them from the slice
-  console.log(cartItems);
+  // console.log(cartItems);
 
   return (
     <div className="header">
@@ -37,7 +37,7 @@ const Header = () => {
           <li>
             <Link to="/cart">
               <img alt="cart" src="/cart.png" />
-              {cartItems.length} Items
+              {cartItems.length}
             </Link>
           </li>
           <li>
