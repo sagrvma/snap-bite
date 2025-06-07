@@ -4,7 +4,7 @@ const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, sla, cloudinaryImageId } =
     resData?.info; //optional chaining, destructuring
   return (
-    <div className="res-card">
+    <div className="res-card" data-testid="resCard">
       <img
         className="res-img"
         src={RestaurantImageAPI + cloudinaryImageId}

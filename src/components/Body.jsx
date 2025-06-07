@@ -18,7 +18,7 @@ const Body = () => {
     setFilteredList(restaurantList);
   }, [restaurantList]);
 
-  console.log(filteredList);
+  // console.log(filteredList);
 
   return !onlineStatus ? (
     <h2>You are offline. Please check your internet connection</h2>
@@ -30,6 +30,7 @@ const Body = () => {
         <div>
           <input
             type="text"
+            data-testid="searchBar"
             value={searchValue}
             onChange={(e) => {
               setSearchValue(e.target.value);
@@ -52,6 +53,7 @@ const Body = () => {
         </div>
         <button
           className="filter-btn"
+          data-testid="filterBtn"
           onClick={() => {
             setFilteredList(
               restaurantList.filter((res) => res.info.avgRating > 4.3)
