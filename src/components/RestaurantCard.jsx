@@ -22,7 +22,7 @@ const RestaurantCard = ({ resData }) => {
 export const withFastDeliveryBanner = (WrappedRestaurantCard) => {
   return (props) => {
     const deliveryTime = props?.resData?.info?.sla?.deliveryTime;
-    const isFast = deliveryTime <= 60;
+    const isFast = deliveryTime <= 30;
     return (
       <div className="fast-delivery-wrapper">
         {isFast && <div className="fast-delivery-banner">Fast Delivery</div>}
