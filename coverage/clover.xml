@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1749286928768" clover="3.2.0">
-  <project timestamp="1749286928768" name="All files">
-    <metrics statements="80" coveredstatements="68" conditionals="16" coveredconditionals="9" methods="33" coveredmethods="23" elements="129" coveredelements="100" complexity="0" loc="80" ncloc="80" packages="2" files="11" classes="11"/>
+<coverage generated="1749291104377" clover="3.2.0">
+  <project timestamp="1749291104377" name="All files">
+    <metrics statements="119" coveredstatements="108" conditionals="30" coveredconditionals="21" methods="50" coveredmethods="41" elements="199" coveredelements="170" complexity="0" loc="119" ncloc="119" packages="2" files="16" classes="16"/>
     <package name="components">
-      <metrics statements="47" coveredstatements="41" conditionals="14" coveredconditionals="9" methods="21" coveredmethods="17"/>
+      <metrics statements="77" coveredstatements="70" conditionals="28" coveredconditionals="20" methods="35" coveredmethods="30"/>
       <file name="Body.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/Body.jsx">
         <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="8"/>
         <line num="8" count="1" type="stmt"/>
@@ -22,6 +22,16 @@
         <line num="58" count="1" type="stmt"/>
         <line num="59" count="20" type="stmt"/>
         <line num="68" count="71" type="stmt"/>
+      </file>
+      <file name="Cart.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/Cart.jsx">
+        <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
       </file>
       <file name="ContactUs.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/ContactUs.jsx">
         <metrics statements="14" coveredstatements="8" conditionals="4" coveredconditionals="2" methods="6" coveredmethods="2"/>
@@ -42,13 +52,23 @@
       </file>
       <file name="Header.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/Header.jsx">
         <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="14" count="3" type="stmt"/>
-        <line num="18" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="14" count="11" type="stmt"/>
+        <line num="18" count="6" type="stmt"/>
         <line num="46" count="1" type="cond" truecount="1" falsecount="1"/>
+      </file>
+      <file name="ItemList.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/ItemList.jsx">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="5" type="stmt"/>
+        <line num="16" count="35" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
       </file>
       <file name="RestaurantCard.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/RestaurantCard.jsx">
         <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
@@ -61,49 +81,71 @@
         <line num="25" count="72" type="stmt"/>
         <line num="26" count="72" type="stmt"/>
       </file>
+      <file name="RestaurantCategory.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/RestaurantCategory.jsx">
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="13" count="112" type="stmt"/>
+      </file>
+      <file name="RestaurantMenu.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/RestaurantMenu.jsx">
+        <metrics statements="14" coveredstatements="14" conditionals="6" coveredconditionals="4" methods="7" coveredmethods="7"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="14" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="12" type="stmt"/>
+        <line num="27" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="33" count="20" type="stmt"/>
+        <line num="36" count="128" type="stmt"/>
+        <line num="45" count="4" type="stmt"/>
+        <line num="51" count="4" type="stmt"/>
+        <line num="64" count="112" type="stmt"/>
+        <line num="69" count="2" type="cond" truecount="1" falsecount="1"/>
+      </file>
       <file name="Shimmer.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/components/Shimmer.jsx">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="4" type="stmt"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="6" type="stmt"/>
       </file>
     </package>
     <package name="utils">
-      <metrics statements="33" coveredstatements="27" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="6"/>
+      <metrics statements="42" coveredstatements="38" conditionals="2" coveredconditionals="1" methods="15" coveredmethods="11"/>
       <file name="UserContext.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/utils/UserContext.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
       </file>
       <file name="appStore.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/utils/appStore.jsx">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
       </file>
       <file name="cartSlice.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/utils/cartSlice.jsx">
-        <metrics statements="7" coveredstatements="3" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
+        <metrics statements="7" coveredstatements="5" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="4" type="cond" truecount="1" falsecount="1"/>
       </file>
       <file name="constants.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/utils/constants.jsx">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
       </file>
       <file name="useOnlineStatus.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/utils/useOnlineStatus.jsx">
         <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="4" count="13" type="stmt"/>
-        <line num="6" count="13" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="4" count="17" type="stmt"/>
+        <line num="6" count="17" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
         <line num="8" count="0" type="stmt"/>
-        <line num="11" count="3" type="stmt"/>
+        <line num="11" count="5" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
-        <line num="16" count="13" type="stmt"/>
+        <line num="16" count="17" type="stmt"/>
       </file>
       <file name="useRestaurantList.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/utils/useRestaurantList.jsx">
         <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
@@ -119,6 +161,18 @@
         <line num="20" count="2" type="stmt"/>
         <line num="22" count="2" type="stmt"/>
         <line num="25" count="11" type="stmt"/>
+      </file>
+      <file name="useRestaurantMenu.jsx" path="/home/sagrvma/Documents/Work/Dev/snap-bite/src/utils/useRestaurantMenu.jsx">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="19" count="6" type="stmt"/>
       </file>
     </package>
   </project>

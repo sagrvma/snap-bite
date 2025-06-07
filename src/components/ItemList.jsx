@@ -14,7 +14,11 @@ const ItemList = ({ items }) => {
     <div className="item-list">
       {items.map((item) => {
         return (
-          <div key={item?.card?.info?.id} className="item">
+          <div
+            key={item?.card?.info?.id}
+            className="item"
+            data-testid="foodItem"
+          >
             <div style={{ flex: 1 }}>
               <div className="item-name-price">
                 <div className="item-name">{item?.card?.info?.name}</div>

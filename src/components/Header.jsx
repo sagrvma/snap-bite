@@ -34,7 +34,7 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li>
+          <li data-testid="cartCount">
             <Link to="/cart">
               <img alt="cart" src="/cart.png" />
               {cartItems.length}
